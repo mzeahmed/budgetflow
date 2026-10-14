@@ -34,4 +34,22 @@ public class Budget {
     public List<Transaction> getTransactions() {
         return List.copyOf(transactions);
     }
+
+    public BigDecimal calculateExpensesByCategory(Category category) {
+        if (category == null) {
+            throw new IllegalArgumentException("Category cannot be null");
+        }
+
+        BigDecimal total = BigDecimal.ZERO;
+
+        for (Transaction transaction : transactions) {
+
+            if (transaction.getCategory() == category && transaction.getType() == TransactionType.EXPENSE) {
+                total = total.add(transaction.getAmount());
+            }
+
+        }
+
+        return total;
+    }
 }
