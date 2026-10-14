@@ -1,3 +1,5 @@
+package com.coelbudget;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ public class Budget {
 
     public void addTransaction(Transaction transaction) {
         if (transaction == null) {
-            Objects.requireNonNull(transaction, "Transaction cannot be null");
+            Objects.requireNonNull(transaction, "main.java.com.coelbudget.Transaction cannot be null");
         }
 
         transactions.add(transaction);

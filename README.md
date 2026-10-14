@@ -1,6 +1,6 @@
-# BudgetFlow
+# CoelBudget
 
-BudgetFlow est une application de gestion de budget personnel conçue pour être utilisée sur plusieurs plateformes : **Linux, Windows, web et mobile**.
+CoelBudget est une application de gestion de budget personnel conçue pour être utilisée sur plusieurs plateformes : **Linux, Windows, web et mobile**.
 
 ## Objectif du projet
 
@@ -10,7 +10,7 @@ Le projet sert également de support à un apprentissage progressif de Java, de 
 
 ## Décisions d'architecture
 
-**Décision validée : BudgetFlow sera multiplateforme et exposera une API consommable par plusieurs clients.**
+**Décision validée : CoelBudget sera multiplateforme et exposera une API consommable par plusieurs clients.**
 
 | Composant | Orientation technique | Statut |
 | --- | --- | --- |
@@ -57,13 +57,13 @@ Applications clientes
 ### Structure de dépôt envisagée
 
 ```text
-budgetflow/
+coelbudget/
 ├── README.md
-├── budgetflow-domain/      # Entités et règles métier Java
-├── budgetflow-api/         # API Spring Boot
-├── budgetflow-desktop/     # Client JavaFX
-├── budgetflow-web/         # Client React
-└── budgetflow-mobile/      # Client mobile (à définir)
+├── coelbudget-domain/      # Entités et règles métier Java
+├── coelbudget-api/         # API Spring Boot
+├── coelbudget-desktop/     # Client JavaFX
+├── coelbudget-web/         # Client React
+└── coelbudget-mobile/      # Client mobile (à définir)
 ```
 
 Cette structure représente une **cible**, pas l'état actuel du dépôt. La migration vers des modules se fera au moment opportun, après introduction d'un outil de build tel que Maven.

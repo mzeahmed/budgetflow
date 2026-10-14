@@ -1,10 +1,12 @@
+package com.coelbudget;
+
 import java.math.BigDecimal;
 
 public class Transaction {
 
     private final String description;
     private final BigDecimal amount;
-    private final TransactionType type;
+    private final com.coelbudget.TransactionType type;
 
     public Transaction(String description, BigDecimal amount, TransactionType type) {
         if (description == null || description.isBlank()) {

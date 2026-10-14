@@ -1,7 +1,7 @@
 # Configuration du projet Java
 SRC_DIR := src
-OUT_DIR := out
-MAIN_CLASS := Main
+OUT_DIR := target/classes
+MAIN_CLASS := com.coelbudget.Main
 JAVAC := javac
 JAVA := java
 
@@ -28,8 +28,7 @@ help:
 ## Compile toutes les sources Java dans le repertoire de sortie.
 compile:
 	@printf "$(YELLOW)Compilation des sources Java...$(NO_COLOR)\n"
-	@mkdir -p $(OUT_DIR)
-	@$(JAVAC) -d $(OUT_DIR) $(SRC_DIR)/*.java
+	@mvn compile
 	@printf "$(GREEN)Compilation terminee.$(NO_COLOR)\n"
 
 ## Compile le projet puis execute la classe principale.
