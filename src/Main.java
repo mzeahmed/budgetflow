@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Main {
 
@@ -24,10 +25,11 @@ public class Main {
 
             BigDecimal balance = budget.calculateBalance();
 
-            displayTransaction(salary);
-            displayTransaction(rent);
-            displayTransaction(grocery);
-            displayTransaction(bonus);
+            List<Transaction> transactions = budget.getTransactions();
+
+            for (Transaction transaction : transactions) {
+                displayTransaction(transaction);
+            }
 
             System.out.println("\nbalance : " + balance);
         } catch (IllegalArgumentException e) {

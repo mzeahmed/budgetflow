@@ -14,7 +14,7 @@ NO_COLOR := \033[0m
 
 .DEFAULT_GOAL := help
 
-.PHONY: help compile run clean rebuild
+.PHONY: help compile run clean rebuild commit
 
 ## Affiche les commandes disponibles.
 help:
@@ -23,6 +23,7 @@ help:
 	@printf "  $(GREEN)make run$(NO_COLOR)      Compile puis lance l'application.\n"
 	@printf "  $(GREEN)make clean$(NO_COLOR)    Supprime les fichiers compiles.\n"
 	@printf "  $(GREEN)make rebuild$(NO_COLOR)  Nettoie puis compile le projet.\n"
+	@printf "  $(GREEN)make commit m=\"…\" b=branche$(NO_COLOR)  Compile, commit et pousse les modifications.\n"
 
 ## Compile toutes les sources Java dans le repertoire de sortie.
 compile:
@@ -45,3 +46,8 @@ clean:
 ## Reconstruit le projet depuis une sortie propre.
 rebuild: clean compile
 	@printf "$(GREEN)Reconstruction terminee.$(NO_COLOR)\n"
+
+## Compile, commit et pousse les modifications sur la branche indiquee.
+## make commit m="message de commit" b=nom_de_la_branche
+commit:
+	@./shell/commit.sh "$(m)" "$(b)"

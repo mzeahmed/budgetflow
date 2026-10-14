@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Budget {
 
-    private List<Transaction> transactions = new ArrayList<>();
+    private final List<Transaction> transactions = new ArrayList<>();
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
@@ -22,5 +22,9 @@ public class Budget {
         }
 
         return balance;
+    }
+
+    public List<Transaction> getTransactions() {
+        return List.copyOf(transactions);
     }
 }
