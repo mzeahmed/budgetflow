@@ -2,9 +2,9 @@ import java.math.BigDecimal;
 
 public class Transaction {
 
-    private String description;
-    private BigDecimal amount;
-    private TransactionType type;
+    private final String description;
+    private final BigDecimal amount;
+    private final TransactionType type;
 
     public Transaction(String description, BigDecimal amount, TransactionType type) {
         if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0) {

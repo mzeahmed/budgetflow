@@ -1,12 +1,17 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Budget {
 
     private final List<Transaction> transactions = new ArrayList<>();
 
     public void addTransaction(Transaction transaction) {
+        if (transaction == null) {
+            Objects.requireNonNull(transaction, "Transaction cannot be null");
+        }
+
         transactions.add(transaction);
     }
 
