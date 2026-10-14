@@ -11,7 +11,7 @@ public class Budget {
 
     public void addTransaction(Transaction transaction) {
         if (transaction == null) {
-            Objects.requireNonNull(transaction, "main.java.com.coelbudget.Transaction cannot be null");
+            Objects.requireNonNull(transaction, "com.coelbudget.Transaction cannot be null");
         }
 
         transactions.add(transaction);

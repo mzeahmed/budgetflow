@@ -14,12 +14,13 @@ NO_COLOR := \033[0m
 
 .DEFAULT_GOAL := help
 
-.PHONY: help compile run clean rebuild commit
+.PHONY: help compile test run clean rebuild commit
 
 ## Affiche les commandes disponibles.
 help:
 	@printf "$(BLUE)Commandes disponibles :$(NO_COLOR)\n"
 	@printf "  $(GREEN)make compile$(NO_COLOR)  Compile les sources Java.\n"
+	@printf "  $(GREEN)make test$(NO_COLOR)     Execute les tests.\n"
 	@printf "  $(GREEN)make run$(NO_COLOR)      Compile puis lance l'application.\n"
 	@printf "  $(GREEN)make clean$(NO_COLOR)    Supprime les fichiers compiles.\n"
 	@printf "  $(GREEN)make rebuild$(NO_COLOR)  Nettoie puis compile le projet.\n"
@@ -30,6 +31,12 @@ compile:
 	@printf "$(YELLOW)Compilation des sources Java...$(NO_COLOR)\n"
 	@mvn compile
 	@printf "$(GREEN)Compilation terminee.$(NO_COLOR)\n"
+
+## Execute les tests automatises.
+test:
+	@printf "$(YELLOW)Execution des tests...$(NO_COLOR)\n"
+	@mvn test
+	@printf "$(GREEN)Tests termines.$(NO_COLOR)\n"
 
 ## Compile le projet puis execute la classe principale.
 run: compile
