@@ -1,5 +1,7 @@
 package com.coelbudget;
 
+import com.coelbudget.console.BudgetConsolePrinter;
+
 import java.math.BigDecimal;
 
 public class Main {
